@@ -94,22 +94,27 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-alias zshconfig="nano ~/.zshrc"
-alias ohmyzsh="nano ~/.oh-my-zsh"
+# Some aliasez
+alias zshconfig="nvim ~/.zshrc"
+alias ohmyzsh="nvim ~/.oh-my-zsh"
 alias pubkey="cat ~/.ssh/id_rsa.pub"
 alias ls="lsd"
 alias killsteam="sudo killall -HUP steam"
+alias vimedit="nvim ~/.config/nvim/init.vim"
+alias fd="fdfind"
 
 # zsh functions
 fpath=($fpath "/home/mptr8/.zfunctions")
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit; promptinit
-prompt spaceship
+# autoload -U promptinit; promptinit
+# prompt spaceship
+
+# prompt starship
+eval "$(starship init zsh)"
 
 # python
-alias python="python3"
+# alias python="python3"
 
 # set android path
 export ANDROID_HOME="$HOME/Android/Sdk"
@@ -120,8 +125,32 @@ export PATH=$PATH:$GOPATH/bin
 export GOPATH=$GOPATH:$HOME/Code/Go
 
 ###-tns-completion-start-###
-if [ -f /home/mptr8/.tnsrc ]; then 
-    source /home/mptr8/.tnsrc 
+if [ -f /home/mptr8/.tnsrc ]; then
+    source /home/mptr8/.tnsrc
 fi
 ###-tns-completion-end-###
 fpath=($fpath "/home/mptr8/.zfunctions")
+
+## Pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+# ruby
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# nim-lang
+export PATH=/home/mptr8/.nimble/bin:$PATH
+
+# kitty
+# autoload -Uz compinit
+# compinit
+# Completion for kitty
+# kitty + complete setup zsh | source /dev/stdin
+
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# fzf ignore .gitignore
+export FZF_DEFAULT_COMMAND='rg --files --hidden'
+

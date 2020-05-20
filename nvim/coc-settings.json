@@ -1,0 +1,21 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [
+    "vue",
+    "css",
+    "markdown",
+    "javascript",
+    "graphql",
+    "html",
+    "yaml",
+    "json",
+    "python"
+  ],
+  "eslint.autoFixOnSave": true,
+  "prettier.disableLanguages": ["njk"],
+  "vetur.format.defaultFormatter.html": "prettier",
+  "vetur.trace.server": "verbose",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"]
+}
