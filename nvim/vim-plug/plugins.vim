@@ -14,7 +14,6 @@ Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-commentary'
 " Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -23,11 +22,11 @@ Plug 'takac/vim-hardtime'
 
 Plug 'voldikss/vim-floaterm'
 " Themes
-Plug 'christianchiarulli/onedark.vim'
 Plug 'morhetz/gruvbox'
 " syntaxplugins
-Plug 'leafOfTree/vim-vue-plugin'
 Plug 'mattn/emmet-vim'
+Plug 'posva/vim-vue'
+Plug 'tomtom/tcomment_vim'
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()

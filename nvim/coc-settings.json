@@ -10,10 +10,15 @@
     "json",
     "python"
   ],
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue"
+  ],
   "eslint.autoFixOnSave": true,
   "prettier.disableLanguages": ["njk"],
-  "vetur.format.defaultFormatter.html": "prettier",
-  "vetur.trace.server": "verbose",
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
 
