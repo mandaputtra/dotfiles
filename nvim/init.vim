@@ -13,7 +13,6 @@ source $HOME/.config/nvim/plug-config/nerd.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 
 " themes configuration
-" source $HOME/.config/nvim/themes/onedark.vim
 source $HOME/.config/nvim/themes/airline.vim
 
 " python host global

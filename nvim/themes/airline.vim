@@ -30,16 +30,16 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 
 " Switch to your current theme
-" let g:airline_theme = 'onedark'
+let g:airline_theme = 'gruvbox'
 
 " Always show tabs
 set showtabline=2
 
 " We don't need to see things like -- INSERT -- anymore
-" set noshowmode
+set noshowmode
 
 " Sections
 " let g:airline_section_c = ''
-let g:airline_section_a = "Mach 2"
-let g:airline_section_y = ''
+" let g:airline_section_a = ''
+" let g:airline_section_y = ''
 let g:webdevicons_enable_airline_tabline = 1
