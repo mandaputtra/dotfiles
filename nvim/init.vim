@@ -4,7 +4,6 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 " load general configuration
 source $HOME/.config/nvim/general/settings.vim
 source $HOME/.config/nvim/keys/mappings.vim
-source $HOME/.config/nvim/keys/which_key.vim
 source $HOME/.config/nvim/general/language-syntax.vim
 " load buch of configuration
 source $HOME/.config/nvim/plug-config/fzf.vim
@@ -19,8 +18,7 @@ source $HOME/.config/nvim/themes/airline.vim
 let g:python3_host_prog = expand("/usr/bin/python3")
 
 " somconfiguration
-let g:hardtime_default_on = 1
-" au BufRead,BufNewFile *.md setlocal textwidth=80
+" let g:hardtime_default_on = 1
 
 filetype plugin on
 colorscheme gruvbox

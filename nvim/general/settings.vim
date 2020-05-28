@@ -1,6 +1,5 @@
-
 syntax enable                           " Enables syntax highlighing
-set hidden                              " Required to keep multiple buffers open multiple buffers
+" set hidden                              " Required to keep multiple buffers open multiple buffers
 set wrap                                " Display long lines as just one line
 set nolist                              " no linebreak list
 set linebreak                           " linebreak
