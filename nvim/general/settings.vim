@@ -1,5 +1,4 @@
 syntax enable                           " Enables syntax highlighing
-" set hidden                              " Required to keep multiple buffers open multiple buffers
 set wrap                                " Display long lines as just one line
 set nolist                              " no linebreak list
 set linebreak                           " linebreak
@@ -14,7 +13,7 @@ set splitbelow                          " Horizontal splits will automatically b
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
 set conceallevel=0                      " So that I can see `` in markdown files
-set textwidth=0
+set textwidth=80
 set wrapmargin=0
 set tabstop=2                           " Insert 2 spaces for a tab
 set shiftwidth=2                        " Change the number of space characters inserted for indentation
@@ -26,16 +25,19 @@ set laststatus=0                        " Always display the status line
 set number                              " Line numbers 
 set relativenumber                      " Show relative number  
 set cursorline                          " Enable highlighting of the current line
-set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs 
 set nobackup                            " This is recommended by coc
 set nowritebackup                       " This is recommended by coc
 set updatetime=300                      " Faster completion
-set formatoptions-=cro                  " Stop newline continution of comments
+set formatoptions=cro                   " Stop newline continution of comments
 set clipboard=unnamedplus               " Copy paste between vim and everything else
 set autochdir                           " Your working directory will always be the same as your working directory
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
+" themes things
+filetype plugin on
+colorscheme gruvbox
+set background=dark                     " tell vim what the background color looks like
 " You can't stop me
 cmap w!! w !sudo tee %

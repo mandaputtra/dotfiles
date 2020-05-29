@@ -14,17 +14,17 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
 Plug 'honza/vim-snippets'
-" Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 " this plugins will disable repeated movement on creatain times
 Plug 'takac/vim-hardtime'
 
+Plug 'mattn/emmet-vim'
 Plug 'voldikss/vim-floaterm'
 " Themes
 Plug 'morhetz/gruvbox'
+Plug 'NLKNguyen/papercolor-theme'
 " syntaxplugins
-Plug 'mattn/emmet-vim'
 Plug 'posva/vim-vue'
 Plug 'tomtom/tcomment_vim'
 
