@@ -1,3 +1,5 @@
+# source ~/.oh-my-zsh/antigen.zsh
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -111,7 +113,7 @@ fpath=($fpath "/home/mptr8/.zfunctions")
 # prompt spaceship
 
 # prompt starship
-eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
 
 # python
 # alias python="python3"
@@ -122,7 +124,7 @@ export ANDROID_HOME="$HOME/Android/Sdk"
 # GOPATH
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
-export GOPATH=$GOPATH:$HOME/Code/Go
+export GOPATH=$OPATH:$HOME/Code/Go
 
 ###-tns-completion-start-###
 if [ -f /home/mptr8/.tnsrc ]; then
@@ -152,5 +154,6 @@ export PATH=/home/mptr8/.nimble/bin:$PATH
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # fzf ignore .gitignore
-export FZF_DEFAULT_COMMAND='rg --files --hidden'
+export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 
+export PATH="/home/mptr8/Programs/git-fuzzy/bin:$PATH"
