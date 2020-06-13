@@ -5,6 +5,6 @@ autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 
 " make sure nerd tree doesnt crash with vim plug
-let g:plug_window = 'noautocmd horizontal topright new'
+let g:plug_window = 'noautocmd vertical topleft new'
 " ignore some files on vim
 set wildignore+=*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.,*.git,*node_modules,*.cache

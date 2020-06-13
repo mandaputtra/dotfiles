@@ -6,14 +6,8 @@ inoremap <expr> <c-k> ("\<C-p>")
 nnoremap <silent> <TAB> :bnext<CR>
 " SHIFT-TAB will go back
 nnoremap <silent> <S-TAB> :bprevious<CR>
-" Close single buffer vim
-nnoremap <silent> <C-b> :bd<CR>
-" Alternate way to save
-nnoremap <silent> <C-s> :w<CR>
-" Alternate way to quit
-nnoremap <silent> <C-Q> :q!<CR>
-" Use control-c instead of escape
-" nnoremap <silent> <C-c> <Esc>
+" Alternate way to close buffer
+nnoremap <silent> <C-Q> :bd<CR>
 " <TAB>: completion.
 inoremap <silent> <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
 
@@ -23,3 +17,7 @@ nnoremap <silent> <M-k>    :resize +2<CR>
 nnoremap <silent> <M-h>    :vertical resize -2<CR>
 nnoremap <silent> <M-l>    :vertical resize +2<CR>
 
+" LANGUAGE SPECIFIC MAPPINGS
+" disable vim-go :GoDef short cut (gd)
+" this is handled by LanguageClient [LC]
+let g:go_def_mapping_enabled = 0

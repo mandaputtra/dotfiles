@@ -13,7 +13,7 @@ set splitbelow                          " Horizontal splits will automatically b
 set splitright                          " Vertical splits will automatically be to the right
 set t_Co=256                            " Support 256 colors
 set conceallevel=0                      " So that I can see `` in markdown files
-set textwidth=80
+set textwidth=0
 set wrapmargin=0
 set tabstop=2                           " Insert 2 spaces for a tab
 set shiftwidth=2                        " Change the number of space characters inserted for indentation
@@ -37,7 +37,7 @@ au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm al
 
 " themes things
 filetype plugin on
-colorscheme gruvbox
+colorscheme onedark 
 set background=dark                     " tell vim what the background color looks like
 " You can't stop me
 cmap w!! w !sudo tee %

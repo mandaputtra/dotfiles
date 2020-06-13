@@ -16,18 +16,21 @@ Plug 'tpope/vim-surround'
 Plug 'honza/vim-snippets'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " this plugins will disable repeated movement on creatain times
 Plug 'takac/vim-hardtime'
+" let g:hardtime_default_on = 1
 
+Plug 'raimondi/delimitmate'
 Plug 'mattn/emmet-vim'
 Plug 'voldikss/vim-floaterm'
 " Themes
-Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
+Plug 'gruvbox-community/gruvbox'
+Plug 'joshdick/onedark.vim'
 " syntaxplugins
 Plug 'posva/vim-vue'
 Plug 'tomtom/tcomment_vim'
-
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'}
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 

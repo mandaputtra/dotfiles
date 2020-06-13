@@ -13,11 +13,10 @@ let g:fzf_buffers_jump = 1
 
 " fzf shortcut
 map <C-p> :Files<CR>
-nnoremap <leader>l :BLines<CR>
-nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>b :BLines<CR>
 nnoremap <leader>g :Rg<CR>
-" nnoremap <leader>t :Tags<CR>
-" nnoremap <leader>m :Marks<CR>
+nnoremap <leader>t :Tags<CR>
+nnoremap <leader>m :Marks<CR>
 
 
 let g:fzf_tags_command = 'ctags -R'
