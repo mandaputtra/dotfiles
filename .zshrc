@@ -10,7 +10,7 @@ export ZSH="/home/mptr8/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="simple"
+ZSH_THEME="sunrise"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -121,11 +121,6 @@ fpath=($fpath "/home/mptr8/.zfunctions")
 # set android path
 export ANDROID_HOME="$HOME/Android/Sdk"
 
-# GOPATH
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
-export GOPATH=$OPATH:$HOME/Code/Go
-
 ###-tns-completion-start-###
 if [ -f /home/mptr8/.tnsrc ]; then
     source /home/mptr8/.tnsrc
@@ -157,3 +152,9 @@ export PATH=/home/mptr8/.nimble/bin:$PATH
 export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
 
 export PATH="/home/mptr8/Programs/git-fuzzy/bin:$PATH"
+
+# DIRENV
+eval "$(direnv hook zsh)"
+
+export DENO_INSTALL="/home/mptr8/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
