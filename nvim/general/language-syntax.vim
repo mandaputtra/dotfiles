@@ -1,11 +1,13 @@
 " read nunjucks as html files
 au BufReadPost *.njk set syntax=html
-
+" Read tsx file
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 " vim-vue config
 let g:vue_pre_processors = []
 
 " disable vim-polyglot on vue
-let g:polyglot_disabled = ['vue']
+let g:polyglot_disabled = ['vue', 'go']
 
 " GOLANG SECTION
 " Golang auto completion things
@@ -16,7 +18,15 @@ let g:go_info_mode='gopls'
 autocmd BufWritePre *.go :call CocAction('runCommand', 'editor.action.organizeImport')
 
 
-" Highlight more info
-let g:go_highlight_structs = 0
-let g:go_highlight_interfaces = 0
-let g:go_highlight_operators = 0
+" Highlight vim-go
+let g:go_highlight_structs = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_extra_types = 1
