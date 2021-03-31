@@ -1,5 +1,7 @@
 " read nunjucks as html files
 au BufReadPost *.njk set syntax=html
+" read ejs as html files
+au BufReadPost *.ejs set syntax=html
 " Read tsx file
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
@@ -7,7 +9,7 @@ autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 let g:vue_pre_processors = []
 
 " disable vim-polyglot on vue
-let g:polyglot_disabled = ['vue', 'go']
+let g:polyglot_disabled = ['vue', 'go', 'typescript']
 
 " GOLANG SECTION
 " Golang auto completion things

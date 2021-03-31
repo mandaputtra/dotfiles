@@ -16,6 +16,7 @@ set splitright                          " Vertical splits will automatically be 
 set conceallevel=0                      " So that I can see `` in markdown files
 set textwidth=0
 set wrapmargin=0
+set nocompatible
 set tabstop=2                           " Insert 2 spaces for a tab
 set shiftwidth=2                        " Change the number of space characters inserted for indentation
 set smarttab                            " Makes tabbing smarter will realize you have 2 vs 4
@@ -51,21 +52,22 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 
-filetype plugin on
-colorscheme gruvbox
-
 " Switch to your current theme
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'base16_3024'
 
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_contrast_light = 'hard'
+filetype plugin on
+colorscheme gruvbox8
 
 set background=dark                     " tell vim what the background color looks like
 
 " You can't stop me
 cmap w!! w !sudo tee %
 
-let g:ranger_terminal = 'urxvt -e'
-let g:ranger_terminal = 'xterm -e'
-
 " let g:hardtime_default_on = 1 
+
+" Scroll Extensions
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
+
+let g:comfortable_motion_scroll_up_key = "k"
+
