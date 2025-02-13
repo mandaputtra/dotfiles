@@ -1,160 +1,108 @@
-# source ~/.oh-my-zsh/antigen.zsh
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/mandaputra/.zsh/completions:"* ]]; then export FPATH="/Users/mandaputra/.zsh/completions:$FPATH"; fi
+export ZSH="$HOME/.oh-my-zsh"
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+ZSH_THEME="robbyrussell"
 
-# Path to your oh-my-zsh installation.
-export ZSH="/home/mptr8/.oh-my-zsh"
-
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="sunrise"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm docker fzf navi)
+plugins=(
+  git
+  gitfast
+  git-commit
+  z
+  fzf
+)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# Created by `pipx` on 2024-03-04 10:21:51
+export PATH="$PATH:/Users/mandaputra/.local/bin"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Some aliasez
+alias restart-shell="exec $SHELL"
+alias ls="eza"
+alias cat="bat"
 alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="nvim ~/.oh-my-zsh"
-alias pubkey="cat ~/.ssh/id_rsa.pub"
-alias ls="lsd"
-alias killsteam="sudo killall -HUP steam"
-alias vimedit="nvim ~/.config/nvim/init.vim"
-alias fd="fdfind"
+alias telebit="$HOME/Applications/telebit/bin/telebit"
+alias code-insiders="$HOME/Applications/code-insiders"
 
-# zsh functions
-fpath=($fpath "/home/mptr8/.zfunctions")
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
-# Set Spaceship ZSH as a prompt
-# autoload -U promptinit; promptinit
-# prompt spaceship
+# mssql
+export LDFLAGS="-L/opt/homebrew/opt/freetds/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/freetds/include"
 
-# prompt starship
-# eval "$(starship init zsh)"
-
-# python
-# alias python="python3"
-
-# set android path
-export ANDROID_HOME="$HOME/Android/Sdk"
-
-###-tns-completion-start-###
-if [ -f /home/mptr8/.tnsrc ]; then
-    source /home/mptr8/.tnsrc
-fi
-###-tns-completion-end-###
-fpath=($fpath "/home/mptr8/.zfunctions")
-
-## Pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
+# Python pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
-# ruby
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# opam configuration
+[[ ! -r /Users/mandaputra/.opam/opam-init/init.zsh ]] || source /Users/mandaputra/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# nim-lang
-export PATH=/home/mptr8/.nimble/bin:$PATH
+# ClamAV
+export PATH=/usr/local/clamav/bin:/usr/local/clamav/sbin:$PATH
 
-# kitty
-# autoload -Uz compinit
-# compinit
-# Completion for kitty
-# kitty + complete setup zsh | source /dev/stdin
+# Flutter
+export PATH=$HOME/Applications/flutter/bin:$PATH
 
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
 
-# fzf ignore .gitignore
-export FZF_DEFAULT_COMMAND="rg --files --hidden --glob '!.git/**'"
+# bun completions
+[ -s "/Users/mandaputra/.bun/_bun" ] && source "/Users/mandaputra/.bun/_bun"
 
-export PATH="/home/mptr8/Programs/git-fuzzy/bin:$PATH"
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export SAPNWRFC_HOME="/usr/local/sap/nwrfcsdk"
+# export SAPNWRFC_HOME="/Users/mandaputra/Code/diamond/sdk"
+
+# pnpm
+export PNPM_HOME="/Users/mandaputra/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+. "/Users/mandaputra/.deno/env"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit
+
+# proto
+export PROTO_HOME="$HOME/.proto";
+export PATH="$PROTO_HOME/shims:$PROTO_HOME/bin:$PATH";
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# ollama
+export OLLAMA_API_BASE=http://127.0.0.1:11434
+
+# Golang
+[ -s "${HOME}/.g/env" ] && \. "${HOME}/.g/env"  # g shell setup
+if [[ -n $(alias g 2>/dev/null) ]]; then
+    unalias g
+fi
+alias air='~/.air'
 
 # DIRENV
 eval "$(direnv hook zsh)"
 
-export DENO_INSTALL="/home/mptr8/.deno"
-export PATH="$DENO_INSTALL/bin:$PATH"
+# AWS
+alias awscopilot=copilot
+
+# sendme
+alias sendme=~/sendme
+
+# Erlang/Elixir
+export PATH=$HOME//opt/homebrew/Cellar/erlang/27.2.2/lib/erlang/erts-15.2.2/bin:$PATH
+export PATH=$HOME//opt/homebrew/bin:$PATH
